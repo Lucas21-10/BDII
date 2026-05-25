@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contatos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/header&footer.css">
+
+    <link rel="stylesheet" href="./css/styles-contatos.css">
+
+</head>
+<body>
+
+    <header>
+        <img class="logo-flavio" src="./img/logo-flavio.png" alt="Logo do site">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quem-somos.html">Quem somos</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contatos.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content-wrapper">
+
+        <section class="conteiner-titulo-contatos">
+            <h1 class="titulo-contatos">Entre em contato conosco</h1>
+        </section>
+
+        <section class="contatos-sec">
+            <div class="conteiner-contatos">
+                <div class="form-comentario"> <h2 class="contato-titulo">Deixe o seu recado</h2>
+                    <form class="contact-form" id = "contactForm" novalidate> <div class="form-grupo">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="name" name="nome" autocomplete="name" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" autocomplete="tel" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" name="cidade" autocomplete="address-level2" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="comentario">Comentário</label>
+                            <textarea id="comentario" name="comentario" rows="6" required ></textarea>
+                        </div>
+                        <button type="submit" class="botao">Enviar Mensagem</button>
+                        <div id = "feedBack" style="margin-top: 10px; font-weight: bold;"></div>
+                    </form>
+                </div>
+
+                <div class="contato-info">
+                    <h2 class="contato-titulo">Fale com o Flávio</h2>
+                    <div class="contato-detalhes">
+                        <div class="contato-item">
+                            <img src="./img/ic_outline-email.png" alt="Ícone de E-mail" class="contato-icone"> <span class="contato-texto">flaviocakes@gmail.com</span>
+                        </div>
+                        <div class="contato-item">
+                            <img src="./img/mdi_instagram.png" alt="Ícone do Instagram" class="contato-icone"> <span class="contato-texto">@flaviocakebolos</span>
+                        </div>
+                        <div class="contato-item">
+                            <img src="./img/ic_baseline-whatsapp.png" alt="Ícone do Whatsapp" class="contato-icone"> <span class="contato-texto">(87) 9 8875-8112</span>
+                        </div>
+                        <div class="contato-item">
+                            <img src="./img/material-symbols_call-outline.png" alt="Ícone de Telefone" class="contato-icone"> <span class="contato-texto">(87) 9 8875-8112</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main> 
+    <footer>
+        <div class="conteiner-geral-footer">
+            <div class="card-footer-logo">
+                <img src="./img/logo-flavio.png" alt="Logo Flavio" class="logo-footer">
+                <p class="footer-logo-descricao">Transformando momentos em sabores <br> inesquecíveis.</p>
+            </div>
+            <div class="card-footer-textos">
+                <h3 class="titulo-footer">Onde Estamos</h3>
+                <p class="footer-descricao">End: Rua Alta - 06 <br> Palmeirina - PE</p>
+            </div>
+            <div class="card-footer-textos">
+                <h3 class="titulo-footer">Contatos</h3>
+                <p class="footer-descricao">Tel.: (87) 9 88758112 <br> Instagram: @flaviocakebolos</p>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 Flávio Cake – Todos os direitos reservados.</p>
+    </footer>
+    <script>
+
+        const formularioContato = document.getElementById("contactForm")
+        const feedbackMensagem = document.getElementById("feedBack")
+
+        if(formularioContato){
+            formularioContato.addEventListener('submit', async function (evento) {
+                evento.preventDefault();
+
+                const dadosDoFormulario = {
+                    nome: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    telefone: document.getElementById('telefone').value,
+                    cidade: document.getElementById('cidade').value,
+                    mensagem: document.getElementById('comentario').value
+                }
+
+
+                feedbackMensagem.textContent = "";
+                feedbackMensagem.style.color = "inherit";
+
+                if(!dadosDoFormulario.nome.trim()){
+                    feedbackMensagem.textContent = "Por favor, insira seu nome!";
+                    feedbackMensagem.style.color = "red";
+                    return;
+                }
+
+                if(!dadosDoFormulario.email.trim()){
+                    feedbackMensagem.textContent = "Por favor, insira seu email!";
+                    feedbackMensagem.style.color = "red";
+                    return;
+                }
+
+                if(!dadosDoFormulario.telefone.trim()){
+                    feedbackMensagem.textContent = "Por favor, insira seu telefone!";
+                    feedbackMensagem.style.color = "red";
+                    return;
+                }
+
+                const validarEmail = dadosDoFormulario.email.includes("@") && dadosDoFormulario.email.includes(".")
+                if(!validarEmail){
+                    feedbackMensagem.textContent = "Entre com um email válido!";
+                    feedbackMensagem.style.color = "red";
+                    return;
+                }
+
+                if(!dadosDoFormulario.cidade.trim()){
+                    feedbackMensagem.textContent = "Por favor, insira sua cidade!";
+                    feedbackMensagem.style.color = "red";
+                    return;
+                }
+
+                if(!dadosDoFormulario.mensagem.trim()){
+                    feedbackMensagem.textContent = "Digite seu comentário!";
+                    feedbackMensagem.style.color = "red";
+                    return;
+                }
+
+                const resposta = await fetch("/contato",{
+                    method: "POST",
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(dadosDoFormulario)
+                })
+                const respostaJ = await resposta.json()
+                feedbackMensagem.textContent = respostaJ.mensagem || "Mensagem enviada com sucesso!"
+                feedbackMensagem.style.color = "green"
+                formularioContato.reset()
+
+            })
+        }
+
+    </script>
+
+</body>
+</html>

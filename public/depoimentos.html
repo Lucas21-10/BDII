@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>depoimentos</title>
+
+     <!-- Link para fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Link Cabeçalho e Rodapé -->
+    <link rel="stylesheet" href="./css/header&footer.css">
+
+    <!-- Link styles depoimentos -->
+     <link rel="stylesheet" href="./css/styles-depoimentos.css">
+
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+
+    <header>
+        <img class="logo-flavio" src="./img/logo-flavio.png" alt="Logo do site">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quem-somos.html">Quem somos</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="depoimentos.html">Depoimentos</a></li>
+                <li><a href="contatos.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção título depoimentos -->
+
+    <section class="titulo-depoimentos">
+        <h1 class="titulo-geral-depoimento">Depoimentos</h1>
+    </section>
+
+    <!-- Seção depoimentos -->
+
+    <section class="depoimentos-sec">
+        <div class="conteiner-dep" id="lista-depoimentos">
+             <!-- Os depoimentos virão dinamicamente pelo JS -->
+        </div>
+    </section>
+
+    <section class="vazia"></section>
+
+    <!-- Rodapé -->
+
+     <footer>
+        <div class="conteiner-geral-footer">
+            <div class="card-footer-logo">
+                <img src="./img/logo-flavio.png" alt="Logo Flavio" class="logo-footer">
+                <p class="footer-logo-descricao">Transformando momentos em sabores <br> inesquecíveis.</p>
+            </div>
+            <div class="card-footer-textos">
+                <h3 class="titulo-footer">Onde Estamos</h3>
+                <p class="footer-descricao">End: Rua Alta - 06 <br> Palmeirina - PE</p>
+            </div>
+            <div class="card-footer-textos">
+                <h3 class="titulo-footer">Contatos</h3>
+                <p class="footer-descricao">Tel.: (87) 9 88758112 <br> Instagram: @flaviocakebolos</p>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 Flávio Cake – Todos os direitos reservados.</p>
+    </footer> 
+
+    <script>
+    
+        fetch("/depoimentos")
+        .then(function(resposta) {
+            return resposta.json();
+        })
+        .then(function(dados) {
+            const container = document.getElementById("lista-depoimentos");
+
+            dados.forEach(function(dep) {
+                const card = document.createElement("div");
+                card.classList.add("card-dep");
+
+                const bloco = document.createElement("blockquote");
+                bloco.classList.add("descricao-dep");
+                bloco.textContent = `"${dep.mensagem}"`;
+
+                const nome = document.createElement("p");
+                nome.classList.add("nome");
+                nome.textContent = `— ${dep.nome}`;
+
+                card.appendChild(bloco);
+                card.appendChild(nome);
+                container.appendChild(card);
+            });
+        })
+        .catch(function(err) {
+            console.error("Erro ao carregar depoimentos:", err);
+    });
+</script>
+
+    
+</body>
+</html>

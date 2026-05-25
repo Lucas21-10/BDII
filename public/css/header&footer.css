@@ -1,0 +1,116 @@
+/*Cabeçalho*/
+
+header{
+    background-color: #3B1F2B;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    overflow: hidden;
+    font-family:"Poppins", Arial, sans-serif;
+}
+
+.logo-flavio{
+    height: 80px;
+    width: auto;
+  
+}
+
+/* NAV */
+
+nav ul{
+    list-style: none; /*remove as bolinhas*/
+    display: flex; /*deixa tudo alinhado*/
+    gap: 40px; /*separa as guias*/
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #EFD8A9;
+    font-size: 18px;
+}
+
+nav ul li a:hover{
+    color: #fff;
+}
+
+/*Rodapé*/
+
+footer{
+    height: 250px;
+    background-color: #3B1F2B;
+    margin: 0 auto; /* Centraliza o rodapé na página */
+    display: flex;
+    flex-direction: column; /*Coloca um abaixo do outro*/
+    align-items: center; /*Centraliza na horizontal todo conteúdo do rodapé*/
+    justify-content: space-between;
+    padding: 50px 0;
+    box-sizing: border-box;
+}
+
+.conteiner-geral-footer{
+    height: 150px;
+    width: 1360px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 0;
+    
+}
+
+.logo-footer{
+    height: 100px;
+    width: auto;
+}
+
+.card-footer-logo{
+    height: 150px;
+    width: 400px;
+    text-align: center;
+}
+
+.card-footer-textos{
+    height: 150px;
+    width: 400px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-descricao{
+    color: #EFD8A9;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.titulo-footer{
+    color: #EFD8A9;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer-descricao{
+    color: #EFD8A9;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.footer-copyright{
+    color: #EFD8A9;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+

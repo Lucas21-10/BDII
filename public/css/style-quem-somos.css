@@ -1,0 +1,113 @@
+/*Seção Quem é Flávio*/
+
+.quem-e-flavio-sec{
+    background-color: #F8F8F8;
+    height: 800px;
+    margin: 0 auto;
+    padding: 0 80px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner-geral-quem-e-flavio{
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+.quadro-left{
+    max-width: 677px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.titulo-quem-e-flavio{
+    color: #3B1F2B;
+    font-family: "Poppins", Arial, sans-serif ;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.descricao-flavio{
+    color: #4A4A4A;
+    font-family: "Playfair Display", Arial, sans-serif ;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 2.05;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.quadro-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-flavio-sec-quem-somos{
+    width: 464px;
+    height: 614px;
+}
+
+/*Seção Nossa Essência*/
+
+.nossa-essencia{
+    background-color: #FFFBF7;
+    height: 348px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*alinha na vertical por causa do flex-direction column*/
+    align-items: center; /*alinha na horizontal por causa do flex-direction column*/
+}
+
+.conteiner-geral-nossa-essencia{
+    max-width: 1280px;
+    height: 78px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo-geral-essencia{
+    color: #3B1F2B;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 55px;
+}
+
+.card-essencia{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.titulo-card-essencia{
+    color: #3B1F2B;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0; 
+}
+
+.descricao-card-essencia{
+    color: #3B1F2B;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0; 
+}

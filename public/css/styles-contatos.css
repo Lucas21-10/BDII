@@ -1,0 +1,152 @@
+/* Seção título contatos */
+
+.conteiner-titulo-contatos{
+    background-color: #F8F8F8;
+    height: 232px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-contatos{
+    color: #3B1F2B;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Seção contatos */
+
+.contatos-sec{
+    background-color: #F8F8F8;
+    margin: 0 auto;
+    padding: 0 80px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner-contatos{
+    width: 1280px;
+    display: flex;
+}
+
+.form-comentario,
+.contato-info{
+    flex: 1;
+    max-width: 50%;
+    box-sizing: border-box;
+    padding: 60px 40px;
+}
+
+.form-comentario{
+    background-color: #FFFBF7;
+    align-items: flex-start;
+}
+
+.contato-info{
+    background-color: #FCE8D1;
+    align-items: flex-start;
+}
+
+.contato-titulo{
+    color: #3B1F2B;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 0;
+    text-align: left;
+    width: 100%;
+}
+
+/* Styles formulário */
+.form-comentario{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-grupo{
+    margin-bottom: 20px;
+}
+
+.form-grupo label{
+    display: block;
+    color: #3B1F2B;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo input[type="tel"],
+.form-grupo textarea{
+    min-height: 48px;
+    width: 560px;
+    padding: 15px;
+    border: 2px solid #FFE9D3;
+    background-color: #FFFBF7;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 16px;
+    color: #3B1F2B;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.form-grupo textarea:last-child{
+    margin-bottom: 0;
+}
+
+.form-grupo textarea{
+    min-height: 230px;
+    width: 560px;
+}
+
+.botao{
+    background-color: #EFD8A9;
+    color: #3B1F2B;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.botao:hover{
+    background-color: #E0C79A;
+}
+
+/* Styles contatos */
+.contato-detalhes{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contato-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.contato-item:last-child{
+    margin-bottom: 0;
+}
+
+.contato-icone{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.contato-texto{
+    color: #4B2E2E;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 20px;
+}
