@@ -1,7 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
 import { depoimentos } from "./routes/depoimentos.js";
-
+import db from "./database/postgre.js"
 
 
 const app = express();
@@ -26,6 +26,14 @@ app.post("/contato", function (req, res) {
 function servidorFinalizado(){
   console.log(`Servidor rodando em http://localhost:${porta}`);
 }
+
+db.connect()
+    .then(() => {
+        console.log('Conectado ao PostgreSQL');
+    })
+    .catch((err) => {
+        console.error('Erro ao conectar no PostgreSQL', err);
+    });
 
 app.listen(porta, servidorFinalizado)
 
