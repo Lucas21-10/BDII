@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
 import { depoimentos } from "./routes/depoimentos.js";
+import { produtos } from "./routes/produtos.js";
 import db from "./database/postgre.js"
 
 
@@ -13,6 +14,9 @@ app.use(express.static("public"));
 
 //Rota (GET) importada de "depoimentos"
 app.use(depoimentos);
+
+// Rota para produtos
+app.use(produtos);
 
 // Rota (POST) de receber o formulário
 app.post("/contato", function (req, res) {
