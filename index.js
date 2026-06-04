@@ -3,6 +3,7 @@ import cors from "cors";
 import { depoimentos } from "./routes/depoimentos.js";
 import { produtos } from "./routes/produtos.js";
 import db from "./database/postgre.js"
+import conectarMongo from "./database/mongo.js";
 
 
 const app = express();
@@ -38,6 +39,7 @@ db.connect()
     .catch((err) => {
         console.error('Erro ao conectar no PostgreSQL', err);
     });
+conectarMongo();
 
 app.listen(porta, servidorFinalizado)
 
