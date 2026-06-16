@@ -3,6 +3,7 @@ import cors from "cors";
 import { depoimentos } from "./routes/depoimentos.js";
 import { produtos } from "./routes/produtos.js";
 import db from "./database/postgre.js";
+import conectarMongo from "./database/mongo.js";
 
 const app = express();
 const porta = 3000;
@@ -59,6 +60,7 @@ function servidorFinalizado() {
     console.log(`Servidor rodando em http://localhost:${porta}`);
 }
 
+// Conexão PostgreSQL
 db.connect()
     .then(() => {
         console.log("Conectado ao PostgreSQL");
@@ -66,6 +68,9 @@ db.connect()
     .catch((err) => {
         console.error("Erro ao conectar no PostgreSQL", err);
     });
+
+// Conexão MongoDB
+conectarMongo();
 
 app.listen(porta, servidorFinalizado);
 
