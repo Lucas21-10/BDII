@@ -1,43 +1,71 @@
-import express, { json } from "express";
+import express from "express";
 import cors from "cors";
 import { depoimentos } from "./routes/depoimentos.js";
 import { produtos } from "./routes/produtos.js";
-import db from "./database/postgre.js"
-
+import db from "./database/postgre.js";
 
 const app = express();
-const porta = 3000
+const porta = 3000;
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
-//Rota (GET) importada de "depoimentos"
+// Rota (GET) importada de depoimentos
 app.use(depoimentos);
 
-// Rota para produtos
+// Rota (GET) importada de produtos
 app.use(produtos);
 
-// Rota (POST) de receber o formulário
-app.post("/contato", function (req, res) {
-  const dados = req.body;
+// Rota (POST) para receber os dados do formulário de contato
+app.post("/contato", async function (req, res) {
 
-  console.log("Dados recebidos do formulário:", dados);
+    const dados = req.body;
 
-  res.json({ mensagem: "Mensagem recebida com sucesso!" });
+    try {
+
+        await db.query(
+            `INSERT INTO contatos
+            (nome, email, telefone, cidade, mensagem)
+            VALUES ($1, $2, $3, $4, $5)`,
+            [
+                dados.nome,
+                dados.email,
+                dados.telefone,
+                dados.cidade,
+                dados.mensagem
+            ]
+        );
+
+        console.log("Contato salvo com sucesso:", dados);
+
+        res.json({
+            mensagem: "Mensagem enviada com sucesso!"
+        });
+
+    } catch (erro) {
+
+        console.error("Erro ao salvar contato:", erro);
+
+        res.status(500).json({
+            mensagem: "Erro ao enviar mensagem."
+        });
+
+    }
+
 });
 
-function servidorFinalizado(){
-  console.log(`Servidor rodando em http://localhost:${porta}`);
+function servidorFinalizado() {
+    console.log(`Servidor rodando em http://localhost:${porta}`);
 }
 
 db.connect()
     .then(() => {
-        console.log('Conectado ao PostgreSQL');
+        console.log("Conectado ao PostgreSQL");
     })
     .catch((err) => {
-        console.error('Erro ao conectar no PostgreSQL', err);
+        console.error("Erro ao conectar no PostgreSQL", err);
     });
 
-app.listen(porta, servidorFinalizado)
+app.listen(porta, servidorFinalizado);
 
