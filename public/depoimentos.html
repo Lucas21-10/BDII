@@ -15,7 +15,7 @@
 
 <body>
 
-<!-- 🔥 HEADER IGUAL AO CONTATOS -->
+<!-- barra inicial -->
 <header>
     <img class="logo-flavio" src="./img/logo-flavio.png" alt="Logo do site">
 
@@ -32,7 +32,7 @@
 
 <main class="main-content-wrapper">
 
-<!-- LISTA DE DEPOIMENTOS -->
+<!-- lista todos os depoimentos -->
 <section class="depoimentos-sec">
     <div id="lista-depoimentos" class="conteiner-dep"></div>
 </section>
@@ -48,7 +48,7 @@
 
 </main>
 
-<!-- 🔥 MODAL MODERNO -->
+<!-- caixa de confirmação para deletar -->
 <div id="modal" class="modal hidden">
   <div class="modal-box">
     <h3>Excluir depoimento?</h3>
@@ -71,7 +71,7 @@ const modal = document.getElementById("modal");
 const btnCancelar = document.getElementById("cancelar");
 const btnConfirmar = document.getElementById("confirmar");
 
-/* ABRIR MODAL */
+/* abrir caixa de confirmação para deletar o dado do banco */
 function abrirModal(id, card){
     idParaDeletar = id;
     modal.classList.remove("hidden");
@@ -94,7 +94,7 @@ function abrirModal(id, card){
     };
 }
 
-/* FECHAR MODAL */
+/* fecha caixa de confirmação */
 btnCancelar.addEventListener("click", () => {
     modal.classList.add("hidden");
     idParaDeletar = null;

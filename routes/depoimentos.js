@@ -3,7 +3,7 @@ import Depoimento from "../models/Depoimento.js";
 
 const depoimentos = Router();
 
-/* LISTAR */
+/* lista os depoimentos */
 depoimentos.get("/depoimentos", async (req, res) => {
     try {
         const lista = await Depoimento.find().sort({ _id: -1 });
@@ -13,7 +13,7 @@ depoimentos.get("/depoimentos", async (req, res) => {
     }
 });
 
-/* CRIAR */
+/* Cria o comentário quando enviado pelo site */
 depoimentos.post("/depoimentos", async (req, res) => {
     try {
 
@@ -33,7 +33,7 @@ depoimentos.post("/depoimentos", async (req, res) => {
     }
 });
 
-/* DELETE (CORRIGIDO E FUNCIONAL) */
+/* Deleta dados do banco mongo */
 depoimentos.delete("/depoimentos/:id", async (req, res) => {
     try {
 
