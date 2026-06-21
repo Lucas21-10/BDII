@@ -1,19 +1,22 @@
 import mongoose from "mongoose";
 
-const depoimentoSchema = new mongoose.Schema({
-  nome: {
-    type: String,
-    required: true
-  },
-  mensagem: {
-    type: String,
-    required: true
-  }
+const DepoimentoSchema = new mongoose.Schema({
+
+nome: {
+type: String,
+required: true
+},
+
+mensagem: {
+type: String,
+required: true
+},
+
+data: {
+type: Date,
+default: Date.now
+}
+
 });
 
-const Depoimento = mongoose.model(
-  "Depoimento",
-  depoimentoSchema
-);
-
-export default Depoimento;
+export default mongoose.model("Depoimento", DepoimentoSchema);

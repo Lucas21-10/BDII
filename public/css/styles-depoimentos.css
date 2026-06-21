@@ -1,22 +1,3 @@
-/* Seção título depoimentos */
-
-.titulo-depoimentos{
-    background-color: #F8F8F8;
-    height: 186px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.titulo-geral-depoimento{
-    color: #3B1F2B;
-    font-family: "Poppins", Arial, sans-serif;
-    font-size: 48px;
-    font-weight: bold;
-}
-
-/* Seção depoimentos */
-
 .depoimentos-sec{
     background-color: #FFFBF7;
     min-height: 900px;
@@ -27,50 +8,134 @@
 
 .conteiner-dep {
     display: grid;
-    grid-template-columns: repeat(3, 300px); 
-    grid-template-rows: repeat(3, 186px);
-    gap: 80px;
+    grid-template-columns: repeat(3, 300px);
+    gap: 40px;
     max-width: 1060px;
+    padding: 40px 0;
 }
 
+/* CARD */
 .card-dep{
-    height: 186px;
+    min-height: 186px;
     width: 300px;
-    background-color: #FFFFFF;
+    background-color: #fff;
     border-radius: 16px;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     display: flex;
-    padding: 10px;
+    padding: 16px;
     flex-direction: column;
     justify-content: space-between;
-    box-sizing: border-box;
+
+    overflow-wrap: break-word;
 }
 
-.descricao-dep{
-    color: #3B1F2B;
-    font-family: "Poppins", Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
+/* TEXTO */
+.card-dep blockquote{
     margin: 0;
-    line-height: 1.4;
-    flex-grow: 1;  /* Faz o texto expandir para ocupar o espaço extra */
+    font-size: 15px;
+    color: #3B1F2B;
+    line-height: 1.5;
+}
+
+/* NOME */
+.card-dep p{
+    margin: 0;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* LIXEIRA */
+.btn-lixeira{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+
+    color: #e60000;
+    transition: 0.2s;
+}
+
+.btn-lixeira:hover{
+    transform: scale(1.2);
+    color: #ff1a1a;
+}
+
+/* FORM */
+.formulario-comentario{
+    background: #FFFBF7;
+    padding: 60px 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 10px 0; /* Espaçamento interno para o texto */
+    gap: 16px;
 }
 
-.nome{
-    color: #3B1F2B ;
-    font-family: "Poppins", Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400px;
-    text-align: center;
-    margin-top: 0;
+.formulario-comentario input,
+.formulario-comentario textarea{
+    width: 100%;
+    max-width: 500px;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }
 
-.vazia{
-    background-color: #F8F8F8;
-    height: 100px;
+.formulario-comentario button{
+    max-width: 500px;
+    width: 100%;
+    padding: 14px;
+    background: #3B1F2B;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+/* MODAL */
+.modal{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.hidden{
+    display:none;
+}
+
+.modal-box{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    width:320px;
+    text-align:center;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.modal-actions button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+#cancelar{
+    background:#ddd;
+}
+
+#confirmar{
+    background:#e60000;
+    color:#fff;
 }
