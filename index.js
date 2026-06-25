@@ -4,6 +4,8 @@ import { depoimentos } from "./routes/depoimentos.js";
 import { produtos } from "./routes/produtos.js";
 import db from "./database/postgre.js";
 import conectarMongo from "./database/mongo.js";
+import testePostgres from "./routes/testePostgres.js";
+import login from "./routes/login.js";
 
 const app = express();
 const porta = 3000;
@@ -11,6 +13,8 @@ const porta = 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
+app.use(testePostgres);
+app.use(login);
 
 // Rota (GET) importada de depoimentos
 app.use(depoimentos);

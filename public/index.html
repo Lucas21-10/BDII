@@ -4,27 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Home</title>
 
-    <!-- Link para fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Link Cabeçalhoe Rodapé -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/header&footer.css">
-
-    <!-- Link styles da Home -->
     <link rel="stylesheet" href="./css/style-home.css">
-
 </head>
 
 <body>
 
-<!-- Cabeçalho -->
-
     <header>
+
         <img class="logo-flavio" src="./img/logo-flavio.png" alt="Logo do site">
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -32,102 +29,166 @@
                 <li><a href="produtos.html">Produtos</a></li>
                 <li><a href="depoimentos.html">Depoimentos</a></li>
                 <li><a href="contatos.html">Contatos</a></li>
+
+                <li>
+                    <button id="abrir-login" class="botao-login">
+                        Entrar
+                    </button>
+                </li>
             </ul>
         </nav>
+
     </header>
 
-<!-- Seção Hero -->
-
     <section class="hero-section">
+
         <div class="hero-imagem-flavio">
-            <img src="./img/bolo-flavio.png" alt="Flávio com um bolo personalizado">
+            <img src="./img/bolo-flavio.png">
         </div>
+
         <div class="hero-textos">
-            <h1 class="titulo">Flávio Cake</h1>
-            <p class="subtitulo">Onde Seus Sonhos... <br> Se Tornam Bolos Incríveis!</p>
-            <p class="descricao">Seja um casamento grandioso,<br> um aniversário vibrante ou um evento especial, <br> transformamos suas ideias em bolos personalizados que são <br> pura arte e sabor.</p>
-            <a href="produtos.html" class="botao-cta">Conheça nossas criações</a>
-        </div>
-    </section>
 
-<!-- Seção Diferenciais -->
+            <h1 class="titulo">
+                Flávio Cake
+            </h1>
 
-    <section class="diferenciais">
-        <h1 class="titulo-diferenciais">Por que escolher Flávio Cake?</h1>
+            <p class="subtitulo">
+                Onde Seus Sonhos...
+                <br>
+                Se Tornam Bolos Incríveis!
+            </p>
 
-        <!-- Cards -->
+            <p class="descricao">
+                Seja um casamento grandioso,
+                <br>
+                um aniversário vibrante ou um evento especial,
+                <br>
+                transformamos suas ideias em bolos personalizados.
+            </p>
 
-        <div class="diferenciais-conteiner">
-            <div class="diferencial-card">
-                <img src="./img/icons8-cake-50 (1).png" alt="ícone do bolo" class="icone-diferencial">
-                <h3 class="titulo-card-diferencial">Sofisticação em cada detalhe</h3>
-                <p class="descricao-card">Bolos com design elegante, perfeitos para eventos especiais.</p>
-            </div>
-            <div class="diferencial-card">
-                <img src="./img/icons8-diamond-50.png" alt="ícone do diamante" class="icone-diferencial">
-                <h3 class="titulo-card-diferencial">Ingredientes de Alta Qualidade</h3>
-                <p class="descricao-card">Usamos somente ingredientes de excelência para garantir um sabor marcante e uma textura inigualável.</p>
-            </div>
-            <div class="diferencial-card">
-                <img src="./img/icons8-paint-50.png" alt="Ícone de tinta" class="icone-diferencial">
-                <h3 class="titulo-card-diferencial">Criações Personalizadas</h3>
-                <p class="descricao-card-tres">Cada bolo é único, feito de acordo com o desejo do cliente.</p>
-            </div>
-            <div class="diferencial-card">
-                <img src="./img/icons8-star-50.png" alt="Ícone da estrela" class="icone-diferencial">
-                <h3 class="titulo-card-diferencial">Experiência Inesquecível</h3>
-                <p class="descricao-card-quatro">Nossos bolos marcam <br> momentos e memórias com <br> beleza e sabor.</p>
-            </div>
+            <a href="produtos.html" class="botao-cta">
+                Conheça nossas criações
+            </a>
 
         </div>
+
     </section>
 
-<!-- Secão Especialidades -->
-    
-    <section class="especialidades">
-        <h1 class="titulo-especialidades">Nossas Especialidades</h1>
+    <!-- LOGIN -->
+    <div id="modal-login" class="modal-login hidden">
 
-        <!-- Cards -->
+        <div class="login-box">
 
-        <div class="especialidades-conteiner">
-            <div class="especilidade-card">
-                <img src="./img/bolo-diferencial-casamento.jpg" alt="Bolos de casamento" class="especialidade-imagem">
-                <h3 class="especialidade-titulo">Bolos de Casamento</h3>
-                <p class="especialidade-descricao">Sofisticação e beleza <br> em cada fatia.</p>
-            </div>
-            <div class="especilidade-card">
-                <img src="./img/bolo-diferencial-aniversario.jpg" alt="Bolos de aniversário" class="especialidade-imagem">
-                <h3 class="especialidade-titulo">Bolos de Aniversário</h3>
-                <p class="especialidade-descricao">Celebrando momentos <br> inesquecíveis</p>
-            </div>
-            <div class="especilidade-card">
-                <img src="./img/ovo-diferencial.jpg" alt="Ovos de páscoa" class="especialidade-imagem">
-                <h3 class="especialidade-titulo">Ovos de Páscoa Artesanais</h3>
-                <p class="especialidade-descricao">Sabor e arte na época mais doce <br> do ano</p>
-            </div>
+            <button id="fechar-login" class="fechar-modal">
+                ×
+            </button>
+
+            <h2>Entrar</h2>
+
+            <form id="form-login">
+
+                <input
+                    type="email"
+                    placeholder="Seu e-mail"
+                    required
+                >
+
+                <input
+                    type="password"
+                    placeholder="Sua senha"
+                    required
+                >
+
+                <button type="submit">
+                    Entrar
+                </button>
+
+            </form>
 
         </div>
-    </section>
 
-<!-- Rodapé -->
+    </div>
 
     <footer>
+
         <div class="conteiner-geral-footer">
+
             <div class="card-footer-logo">
-                <img src="./img/logo-flavio.png" alt="Logo Flavio" class="logo-footer">
-                <p class="footer-logo-descricao">Transformando momentos em sabores <br> inesquecíveis.</p>
+
+                <img src="./img/logo-flavio.png" class="logo-footer">
+
+                <p class="footer-logo-descricao">
+                    Transformando momentos em sabores inesquecíveis.
+                </p>
+
             </div>
-            <div class="card-footer-textos">
-                <h3 class="titulo-footer">Onde Estamos</h3>
-                <p class="footer-descricao">End: Rua Alta - 06 <br> Palmeirina - PE</p>
-            </div>
-            <div class="card-footer-textos">
-                <h3 class="titulo-footer">Contatos</h3>
-                <p class="footer-descricao">Tel.: (87) 9 88758112 <br> Instagram: @flaviocakebolos</p>
-            </div>
+
         </div>
-        <p class="footer-copyright">© 2025 Flávio Cake – Todos os direitos reservados.</p>
+
     </footer>
-    
+
+    <script>
+        const abrir = document.getElementById("abrir-login");
+        const fechar = document.getElementById("fechar-login");
+        const modal = document.getElementById("modal-login");
+
+        let logado = false;
+
+        // abre modal ou faz logout
+        abrir.addEventListener("click", () => {
+            if (logado) {
+                logado = false;
+                abrir.textContent = "Entrar";
+                alert("Logout realizado com sucesso!");
+                return;
+            }
+
+            modal.classList.remove("hidden");
+        });
+
+        fechar.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+
+        // Login
+        document.getElementById("form-login")
+            .addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const email = document.querySelector('input[type="email"]').value;
+                const senha = document.querySelector('input[type="password"]').value;
+
+                try {
+                    const resposta = await fetch("http://localhost:3000/login", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ email, senha })
+                    });
+
+                    const data = await resposta.json();
+
+                    if (!resposta.ok) {
+                        alert(data.mensagem || "Email ou senha inválidos");
+                        return;
+                    }
+
+                    alert("Login realizado com sucesso!");
+
+                    console.log("Usuário logado:", data.usuario);
+
+                    // Quando o usuario logar o botão mudar para sair!
+                    logado = true;
+                    abrir.textContent = "Sair";
+
+                    modal.classList.add("hidden");
+
+                } catch (erro) {
+                    alert("Erro ao conectar com o servidor");
+                }
+            });
+    </script>
+
 </body>
 </html>
